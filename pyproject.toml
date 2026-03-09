@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "telegrab"
+version = "0.1.0"
+description = "Download a video from Telegram post links using a user MTProto session."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+  "platformdirs>=4.3.0",
+  "rich>=13.9.0",
+  "telethon>=1.41.0",
+  "typer>=0.16.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.3.0",
+]
+
+[project.scripts]
+telegrab = "telegrab.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+  "integration: integration tests requiring Telegram credentials and network",
+]
