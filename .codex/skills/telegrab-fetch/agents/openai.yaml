@@ -1,0 +1,7 @@
+interface:
+  display_name: "Telegrab Fetch"
+  short_description: "Download one Telegram post video via local telegrab."
+  default_prompt: "Use $telegrab-fetch to download one Telegram post video and return file path plus fetch metadata."
+
+policy:
+  allow_implicit_invocation: true
