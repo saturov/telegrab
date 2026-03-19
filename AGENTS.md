@@ -81,7 +81,9 @@ telegrab fetch "<telegram-link>" --dry-run --output json
 5. For network-related scenarios, prefer unit/CLI tests and `--dry-run` first; real Telegram calls are for cases that cannot be validated otherwise.
 6. Do not commit artifacts from `downloads/`, `__pycache__`, real private channel links, API credentials, or session files.
 7. If the change affects agent workflows, verify `doctor`, `describe`, and JSON output as part of acceptance.
-8. All commit messages must follow the Conventional Commits format, for example: `feat: add JSON output for status` or `docs: add agent workflow notes`.
+8. Before creating any commit, run `git pull` to sync the local branch with the remote and reduce avoidable divergence.
+9. All commit messages must follow the Conventional Commits format, for example: `feat: add JSON output for status` or `docs: add agent workflow notes`.
+10. Commits may be split into multiple smaller commits when that better reflects the semantic boundaries of the change, but each commit message must still follow Conventional Commits.
 
 ## Practical Guidance For Future Agents
 
